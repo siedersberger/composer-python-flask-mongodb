@@ -1,0 +1,30 @@
+version: '3.0'
+
+services:
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    volumes:
+      - "/home/daniel/PycharmProjects/testeMongo/db:/data/db"
+    networks:
+      - production-network
+
+  pyapp:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: daniel/pyapp
+    container_name: pyapp
+    volumes:
+      - "/home/daniel/PycharmProjects/testeMongo/app:/var/www/app"
+    ports:
+      - 5000:5000
+    networks:
+      - production-network
+    depends_on:
+      - mongodb
+
+networks:
+    production-network:
+        driver: bridge
