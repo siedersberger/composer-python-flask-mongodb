@@ -5,14 +5,15 @@
     <table class="table table-striped table-responsive table-bordered">
         <thead class="thead-default">
             <tr>
-                <th>Song title</th>
-                <th>Artist name</th>
+                <th>Tag name</th>
+                <th>Rank of tags related with python</th>
             </tr>
         </thead>
         <tbody>
-            {% for aluno in alunos %}
+            {% for tag in tags %}
             <tr>
-                <td>{{aluno.nome}}</td>
+                <td>{{tag[0]}}</td>
+                <td>{{tag[1]}}</td>
             </tr>
             {% endfor %}
         </tbody>
