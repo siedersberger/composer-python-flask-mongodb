@@ -1,21 +1,21 @@
 from connect_mongo import questions_collection
 import operator
 
-def parser_tags():
+def parser_tags(selected_language):
     #identify all tags related with questions about python
     #append on a list these tags, except tags named python
-    quest = questions_collection.find({},{"tags": 1, "_id": 0})
+    quest = questions_collection.find({"tags":selected_language},{"tags": 1, "_id": 0})
     questions_tags = []
     for item in quest:
         for tag in item["tags"]:
-            if 'python' not in tag:
+            if selected_language not in tag:
                 questions_tags.append(tag)
     
-    #print("There are {} tags related with python.".format(len(questions_tags)))
+    print("There are {} tags related with {}.".format(len(questions_tags),selected_language))
     return questions_tags
 
-def rank_tags():
-    qtags = parser_tags()
+def rank_tags(selected_language):
+    qtags = parser_tags(selected_language)
     tags_rank = {}
     for tag in qtags:
         # print(tag)

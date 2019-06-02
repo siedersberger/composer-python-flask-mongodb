@@ -12,7 +12,7 @@ services:
 
   pyapp:
     build:
-      dockerfile: Dockerfile
+      dockerfile: app.Dockerfile
       context: .
     image: daniel/pyapp
     container_name: pyapp
@@ -20,6 +20,18 @@ services:
       - "/home/daniel/PycharmProjects/testeMongo/app:/var/www/app"
     ports:
       - 5000:5000
+    networks:
+      - production-network
+    depends_on:
+      - mongodb
+      - pycrawl
+
+  pycrawl:
+    build:
+      dockerfile: crawl.Dockerfile
+      context: .
+    image: daniel/pycrawl
+    container_name: pycrawl
     networks:
       - production-network
     depends_on:
