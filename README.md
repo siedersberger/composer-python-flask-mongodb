@@ -5,8 +5,8 @@ This project use the stackoverflow API for get informations about the questions 
 
 The project is composed by the follow modules:
 - **Data base**: MongoDB;
-- **Crawl**: responsable for collect and store data from stackoverflow API;
-- **App**: responsable for the interface with the user (the app runs in * *127.0.0.1:5000* *).
+- **Crawl**: responsible for collect and store data from stackoverflow API;
+- **App**: responsible for the interface with the user (the app runs in * *127.0.0.1:5000* *).
 
 ## App start
 Each module runs into a docker container, wich is necessary for run the app. To start the application, you have to execute the follow steps:
