@@ -5,8 +5,8 @@ This project use the stackoverflow API for get informations about the questions 
 
 The project is composed by the follow modules:
 - **Data base**: MongoDB;
-- **Crawl**: responsable for collect the information from stackoverflow API through stackAPI wrapper and store on the Mongo data base;
-- **App**: responsable for the interface with the user (the app runs in * *127.0.0.1:5000* *)
+- **Crawl**: responsable for collect and store data from stackoverflow API;
+- **App**: responsable for the interface with the user (the app runs in * *127.0.0.1:5000* *).
 
 ## App start
 Each module runs into a docker container, wich is necessary for run the app. To start the application, you have to execute the follow steps:
@@ -15,3 +15,7 @@ Each module runs into a docker container, wich is necessary for run the app. To 
     1. docker-compose build 
     2. docker-compose up -d
     3. docker-compose down
+
+### Operation
+While the App module show informations stored in data base , the Crawl module stores data in data base independently. When you run the project from docker commands cited above, the Crawl module runs with default inputs (MONTH and YEAR) for store initial data in the data base. If you want to add more data to the data base, specifying anothers inputs, you can execute the follow command:
+- docker exec mycrawl python3 consumer_api.py MONTH YEAR
