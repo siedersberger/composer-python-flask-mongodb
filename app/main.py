@@ -1,11 +1,9 @@
 from flask import Flask, render_template
-from connect_mongo import Mongo_connection
+from mongoDAO import ConnectionDAO, QuestionDAO
 
 app = Flask(__name__)
 
 from views import *
-
-my_db = Mongo_connection(hostname='mongodb')
 
 if __name__ == '__main__':
         

@@ -24,7 +24,6 @@ services:
       - production-network
     depends_on:
       - mongodb
-      - pycrawl
 
   pycrawl:
     build:
@@ -32,6 +31,8 @@ services:
       context: .
     image: daniel/pycrawl
     container_name: pycrawl
+    volumes:
+      - "/home/daniel/PycharmProjects/testeMongo/crawl:/var/www/crawl"
     networks:
       - production-network
     depends_on:
