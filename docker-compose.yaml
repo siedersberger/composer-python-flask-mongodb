@@ -37,6 +37,9 @@ services:
       - production-network
     depends_on:
       - mongodb
+    environment: 
+      - MONTH=2
+      - YEAR=2019
 
 networks:
     production-network:

@@ -1,5 +1,4 @@
 FROM python:3.5.2
-MAINTAINER Siedersberger
 COPY libdao /var/www/libdao
 COPY app /var/www/app
 WORKDIR /var/www/app
