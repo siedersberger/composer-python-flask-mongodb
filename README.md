@@ -15,6 +15,7 @@ Each module runs into a docker container, wich is necessary for run the app. To 
     1. docker-compose build 
     2. docker-compose up -d
     3. docker-compose down
+3. Go to web browser on **127.0.0.1:5000**
 
 ### Operation
 While the App module show informations stored in data base , the Crawl module stores the data independently. When you run the project with docker commands cited above, the Crawl module runs with default inputs (MONTH and YEAR), storing initial data in the data base.  
