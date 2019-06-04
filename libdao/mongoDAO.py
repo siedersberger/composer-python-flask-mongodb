@@ -17,10 +17,10 @@ class ConnectionDAO:
 class QuestionDAO:
 
     def __init__(self, db):
-        self.questions_collection = db["questions_collection"]
+        self.my_collection = db["questions_collection"]
         
     def find_tag(self, selected_tag):
-        return self.questions_collection.find({"tags":selected_tag},{"tags": 1, "_id": 0})
+        return self.my_collection.find({"tags":selected_tag},{"tags": 1, "_id": 0})
 
     def add_question(self, question):
         ''' Defines a _id for the question and verify if this id is unique. 
@@ -29,6 +29,6 @@ class QuestionDAO:
         question["_id"] = question["question_id"]
         key = {"_id":question["question_id"]}
         insert = {"$set":question}
-        self.questions_collection.update_one(key, insert, upsert=True)
+        self.my_collection.update_one(key, insert, upsert=True)
 
 

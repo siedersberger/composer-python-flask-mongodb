@@ -6,7 +6,7 @@ services:
     image: mongo
     container_name: mongodb
     volumes:
-      - "/home/daniel/PycharmProjects/testeMongo/db:/data/db"
+      - "./db:/data/db"
     networks:
       - production-network
 
@@ -17,7 +17,7 @@ services:
     image: daniel/pyapp
     container_name: pyapp
     volumes:
-      - "/home/daniel/PycharmProjects/testeMongo/app:/var/www/app"
+      - "./app:/var/www/app"
     ports:
       - 5000:5000
     networks:
@@ -32,7 +32,7 @@ services:
     image: daniel/pycrawl
     container_name: pycrawl
     volumes:
-      - "/home/daniel/PycharmProjects/testeMongo/crawl:/var/www/crawl"
+      - "./crawl:/var/www/crawl"
     networks:
       - production-network
     depends_on:

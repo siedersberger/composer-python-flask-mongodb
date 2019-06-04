@@ -5,4 +5,4 @@ COPY crawl /var/www/crawl
 WORKDIR /var/www/crawl
 RUN pip install --upgrade pip
 RUN pip3 install -r requirements.txt 
-ENTRYPOINT python3 consumer_api.py 3 2019
+ENTRYPOINT python3 consumer_api.py
