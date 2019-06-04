@@ -9,7 +9,9 @@ The project is composed by the follow modules:
 - **App**: responsable for the interface with the user (the app runs in * *127.0.0.1:5000* *)
 
 ## App start
-Each module runs into a docker container. To run the application, you have to execute the follow commands:
-1. docker-compose build 
-2. docker-compose up -d
-3. docker-compose down
+Each module runs into a docker container, wich is necessary for run the app. To start the application, you have to execute the follow steps:
+1. Clone or download this repository
+2. Into the directory, execute these commands:
+    1. docker-compose build 
+    2. docker-compose up -d
+    3. docker-compose down

@@ -1,11 +1,11 @@
-from mongoDAO import ConnectionDAO, QuestionDAO
+from libdao.mongoDAO import ConnectionDAO, QuestionDAO
 import operator
 
 def parser_tags(selected_language):
     #identify all tags related with questions about python
     #append on a list these tags, except tags named python
-    my_db = ConnectionDAO(hostname='localhost')
-    my_collection = QuestionDAO(my_db.questions_collection)
+    my_db = ConnectionDAO(hostname='mongodb')
+    my_collection = QuestionDAO(my_db.db)
 
     quest = my_collection.find_tag(selected_language)
     questions_tags = []

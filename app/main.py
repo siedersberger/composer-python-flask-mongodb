@@ -1,5 +1,6 @@
 from flask import Flask, render_template
-from mongoDAO import ConnectionDAO, QuestionDAO
+import sys
+sys.path.append('../')
 
 app = Flask(__name__)
 
