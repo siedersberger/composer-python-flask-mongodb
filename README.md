@@ -2,25 +2,27 @@
 
 ## Description
 This project use the stackoverflow API for get informations about the questions made on a specific period of time.
-It simulates an environment where there are an web application connected with a database.
-Also, there is a bot that store data in database independently of the application.
+It simulates an environment where there is an web application in python and flask connected with a database MongoDB.
+Also, there is a bot that consults StackAPI and store data in database independently of the application. 
 
 For this, the project is composed by the follow modules:
 - **Database**: MongoDB;
 - **Crawl**: responsible for collect and store data from stackoverflow API;
 - **App**: responsible for the interface with the user.
 
-Each module runs into a docker container, which is necessary for run the app.
-The docker containers are configured to communicate with each other and show the application running on localhost.
+Each module runs into a docker container.
+The containers are configured to communicate with each other and show the application running on localhost.
 
 ## App start
-To start the application, you have to execute the follow steps:
+To start the application, you have to install execute the follow steps:
 1. Clone or download this repository
 2. Into the directory, execute these commands:
-    1. docker-compose build *(docker-compose version: '3.0')*
+    1. docker-compose build 
     2. docker-compose up -d
     3. docker-compose down
 3. Go to web browser on **127.0.0.1:5000**
+
+*** The docker-compose file version is 3.0
 
 ### Operation
 While the App module show informations stored in database , the Crawl module stores the data independently. When you run the project with docker commands cited above, the Crawl module runs with default inputs (MONTH and YEAR), storing initial data in the database.  
