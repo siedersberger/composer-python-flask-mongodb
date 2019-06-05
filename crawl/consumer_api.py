@@ -34,6 +34,6 @@ if __name__ == '__main__':
         month = 1
         year = 2019
 
-    print("Data period used: {}/{}".format(month,year))
+    print("Data period setted: {}/{}".format(month,year))
     set_questions(year, month)
     
