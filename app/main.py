@@ -1,6 +1,4 @@
 from flask import Flask, render_template
-import sys
-sys.path.append('../')
 
 app = Flask(__name__)
 
