@@ -32,6 +32,10 @@ If you want to add more data to the database, you have to change these inputs pa
 2. Set the environment variables MONTH and YEAR for the pycrawl service
 
 ```yaml
+version: '3.0'
+
+#code omitted
+
 pycrawl:
     build:
       dockerfile: crawl.Dockerfile
