@@ -2,15 +2,16 @@
 
 ## Description
 This project use the stackoverflow API for get informations about the questions made on a specific period of time.
-It simulated an environment where there are an application connected with a database and running on *127.0.0.1:5000*. 
+It simulates an environment where there are an web application connected with a database.
 Also, there is a bot that store data in database independently of the application.
 
 For this, the project is composed by the follow modules:
 - **Database**: MongoDB;
 - **Crawl**: responsible for collect and store data from stackoverflow API;
-- **App**: responsible for the interface with the user (the app runs on *127.0.0.1:5000*).
+- **App**: responsible for the interface with the user.
 
-Each module runs into a docker container, wich is necessary for run the app.
+Each module runs into a docker container, which is necessary for run the app.
+The docker containers are configured to communicate with each other and show the application running on localhost.
 
 ## App start
 To start the application, you have to execute the follow steps:
