@@ -38,7 +38,7 @@ services:
     depends_on:
       - mongodb
     environment: 
-      - MONTH=2
+      - MONTH=4
       - YEAR=2019
 
 networks:
