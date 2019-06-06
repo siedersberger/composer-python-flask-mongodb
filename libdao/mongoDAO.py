@@ -8,7 +8,7 @@ class ConfigManager:
         if not ConfigManager.__instance:
             ConfigManager.__instance = {
                 "mongo_port": 27017,
-                "mongo_host": "localhost"
+                "mongo_host": "mongodb"
             }
         return ConfigManager.__instance
 

@@ -9,8 +9,7 @@ from calendar import monthrange
 def set_questions(year, month):
     ''' get a set of questions from StackAPI and store in data base (MongoDB)
     '''
-    my_db = ConnectionDAO(hostname='mongodb')
-    my_collection = QuestionDAO(my_db.db)
+    my_collection = QuestionDAO()
 
     SITE = StackAPI('stackoverflow')
     SITE.page_size=100

@@ -35,12 +35,12 @@ class ParserTags:
 
         return sorted(tags_rank.items(), key=operator.itemgetter(1), reverse=True) 
 
-    def count_tags(self):
-        tags_counted = {}
-        all_documents = self.__question_dao.find_all_documents()
-        for document in all_documents:
-            for tag in document["tags"]:
-                if tag not in tags_counted:
-                    tags_counted[tag] = self.__question_dao.find_tag(tag).count()
+    # def count_tags(self):
+    #     tags_counted = {}
+    #     all_documents = self.__question_dao.find_all_documents()
+    #     for document in all_documents:
+    #         for tag in document["tags"]:
+    #             if tag not in tags_counted:
+    #                 tags_counted[tag] = self.__question_dao.find_tag(tag).count()
 
-        return sorted(tags_counted.items(), key=operator.itemgetter(1), reverse=True) 
+    #     return sorted(tags_counted.items(), key=operator.itemgetter(1), reverse=True) 

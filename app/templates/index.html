@@ -2,23 +2,6 @@
 
 {%block conteudo%}
 
-    <table class="table table-striped table-responsive table-bordered">
-        <thead class="thead-default">
-            <tr>
-                <th>Tag name</th>
-                <th>Number of questions occurences</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for tag in top_tags %}
-            <tr>
-                <td>{{tag[0]}}</td>
-                <td>{{tag[1]}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    
     <form action="{{url_for('consult')}}" method="POST" enctype="multipart/form-data">
         <fieldset>
                 <div class="form-group">

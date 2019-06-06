@@ -7,7 +7,7 @@ parser_tags = ParserTags()
 @app.route("/")
 def index():
     sorted_tags = parser_tags.count_tags()
-    return render_template('index.html', title='Top 10 tags consulted on Stackoverflow', top_tags = sorted_tags[0:9])
+    return render_template('index.html', title='Consult tags on Stackoverflow platform')
 
 @app.route('/consult', methods=['POST'])
 def consult():
