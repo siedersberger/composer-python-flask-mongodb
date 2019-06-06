@@ -1,10 +1,13 @@
 from flask import render_template, request, redirect, url_for
-from parser_mongo import rank_tags
+from parser_mongo import ParserTags
 from main import app
+
+parser_tags = ParserTags()
 
 @app.route("/")
 def index():
-    return render_template('index.html', title='Consult stackoverflow questions ')
+    sorted_tags = parser_tags.count_tags()
+    return render_template('index.html', title='Top 10 tags consulted on Stackoverflow', top_tags = sorted_tags[0:9])
 
 @app.route('/consult', methods=['POST'])
 def consult():
@@ -16,5 +19,5 @@ def consult():
 
 @app.route("/rank/<selected_language>")
 def rank(selected_language):
-    rt = rank_tags(selected_language)
+    rt = parser_tags.rank_tags(selected_language)
     return render_template('rank.html', title='Top tags related with {}'.format(selected_language), selected_tag=selected_language, tags=rt[0:19])
