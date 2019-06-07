@@ -1,4 +1,4 @@
-# My crawling with python and mongodb (mycrawling-py)
+# My app with python and mongodb (mycrawling-py)
 
 ## Description
 This project use the stackoverflow API for get informations about the questions made on a specific period of time.
