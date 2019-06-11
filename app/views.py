@@ -20,3 +20,7 @@ def consult():
 def rank(selected_language):
     rt = parser_tags.rank_tags(selected_language)
     return render_template('rank.html', title='Top tags related with {}'.format(selected_language), selected_tag=selected_language, tags=rt[0:19])
+
+@app.errorhandler(500)
+def internal_error(e):
+    return render_template('500.html'), 500

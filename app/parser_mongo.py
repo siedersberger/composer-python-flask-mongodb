@@ -1,3 +1,5 @@
+import sys
+sys.path.append('../')
 import operator
 from libdao.mongoDAO import QuestionDAO
 

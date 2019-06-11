@@ -1,7 +1,4 @@
-import sys
-sys.path.append('../')
 from flask import Flask, render_template
-from libdao.mongoDAO import ConnectionDAO, QuestionDAO
 
 app = Flask(__name__)
 
