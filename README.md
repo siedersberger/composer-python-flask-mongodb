@@ -2,24 +2,23 @@
 
 ## Description
 This project use the stackoverflow API for get informations about the questions made on a specific period of time.
-It simulates an environment where there is an web application in python and flask connected with a database MongoDB.
+It simulates an environment constituted by an web application in python and flask connected with a database MongoDB.
 Also, there is a bot that consults StackAPI and store data in database independently of the application. 
 
-For this, the project is composed by the follow modules:
+The project is composed by the follow modules:
 - **Database**: MongoDB;
 - **Crawl**: responsible for collect and store data from stackoverflow API;
 - **App**: responsible for the interface with the user.
 
 Each module runs into a docker container.
-The containers are configured to communicate with each other and show the application running on localhost.
+The containers are configured to communicate with each other and running the web application on localhost.
 
 ## App start
-To start the application, you have to install execute the follow steps:
+To start the application, you have to execute the follow steps:
 1. Clone or download this repository
 2. Into the directory, execute these commands:
     1. docker-compose build 
     2. docker-compose up -d
-    3. docker-compose down
 3. Go to web browser on **127.0.0.1:5000**
 
 *** The docker-compose file version is 3.0
@@ -40,7 +39,7 @@ pycrawl:
     build:
       dockerfile: crawl.Dockerfile
       context: .
-    image: daniel/pycrawl
+    image: siedersberger/pycrawl
     container_name: pycrawl
     volumes:
       - "./crawl:/var/www/crawl"
