@@ -14,7 +14,7 @@ services:
     build:
       dockerfile: app.Dockerfile
       context: .
-    image: daniel/pyapp
+    image: siedersberger/pyapp
     container_name: pyapp
     volumes:
       - "./app:/var/www/app"
